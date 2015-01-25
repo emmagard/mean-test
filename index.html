@@ -4,7 +4,7 @@
     <link href= "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel= "stylesheet">
     <link href= "style.css" rel= "stylesheet">
     <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-    <script src= "//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+    <script src= "http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
     <script src= "app.js"></script>
   </head>
   <body ng-app= "flapperNews">
@@ -15,7 +15,8 @@
       </div><!-- column -->
     </div><!-- row -->
 
-    <script type= "text/ng-template" id= "/home.html">// Inline template
+    <!-- Inline Template -->
+    <script type= "text/ng-template" id= "/home.html">
       <div class="page-header">
         <h1>Emma News</h1>
       </div>
@@ -23,11 +24,11 @@
       <div ng-repeat= "post in posts | orderBy: '-upvotes'">
         <span class= "glyphicon glyphicon-thumbs-up"
           ng-click= "incrementUpvotes(post)"></span>
-        // if post includes a link (post.link === true) then "show" this version of the title...
+        <!-- if post includes a link (post.link === true) then "show" this version of the title... -->
         <a ng-show= "post.link" href= "{{post.link}}">
           {{post.title}}
         </a>
-        //... and hide this version. If post.link is false then unhide this version.
+        <!--... and hide this version. If post.link is false then unhide this version. -->
         <span ng-hide= "post.link">
           {{post.title}}
         </span>
@@ -75,6 +76,15 @@
           {{comment.body}}
         </span>
       </div>
+
+      <form ng-submit= "addComment()" style= "margin-top:30px;">
+        <h3>Add a new comment</h3>
+
+        <div class= "form-group">
+          <input type= "text" class= "form-control" placeholder= "Comment" ng-model= "body"></input>
+        </div>
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>
     </script><!-- posts template -->
   </body>
 </html>
