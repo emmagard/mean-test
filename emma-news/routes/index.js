@@ -39,7 +39,7 @@ router.param('post', function(req, res, next, id) {
   });
 });
 
-// GET /posts/:id -view a single post object
+// GET /posts/:id -view a single post
 router.get('/posts/:post', function(req, res) {
   res.json(req.post);
 });
