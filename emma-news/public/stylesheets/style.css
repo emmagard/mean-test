@@ -1,8 +1,12 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.glyphicon-thumbs-up{
+  cursor: pointer;
 }
 
-a {
-  color: #00B7FF;
+span{
+  font-style: 20px;
+  margin-left: 10px;
+}
+
+form{
+  margin-top: 30px;
 }
