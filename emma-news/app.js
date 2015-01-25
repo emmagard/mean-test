@@ -58,3 +58,8 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+// connect to mongoDB
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/news');
